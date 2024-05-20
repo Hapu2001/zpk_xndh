@@ -1,0 +1,28 @@
+@Metadata.layer: #CORE
+annotate view ZR_TB_XNDH_HIS with
+{
+  @UI: {  lineItem:       [{ position: 10 }]}
+  SalesOrder;
+  @UI: {  lineItem:       [{ position: 20 }]}
+  SoLanChinhSua;
+  @UI: {  lineItem:       [{ position: 30 }]}
+  Product;
+  @UI: {  lineItem:       [{ position: 40 }]}
+  SalesOrderItemText;
+  @UI: {  lineItem:       [{ position: 50 }]}
+  OrderQuantity;
+  @UI: {  lineItem:       [{ position: 60 }]}
+  OrderQuantityUnit;
+  @UI: {  lineItem:       [{ position: 70 }]}
+  CreationDate;
+  @UI: {  lineItem:       [{ position: 80 }]}
+  RequestedDeliveryDate;
+  @UI: {  lineItem:       [{ position: 90 }]}
+  StartDate;
+  @UI: {  lineItem:       [{ position: 100 }]}
+  ConfirmDate;
+  @UI: {  lineItem:       [{ position: 110 }]}
+  CreatedBy;
+  @UI: {  lineItem:       [{ position: 120 }]}
+  CreatedAt;
+}

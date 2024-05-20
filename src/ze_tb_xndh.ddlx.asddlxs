@@ -1,0 +1,70 @@
+@Metadata.layer: #CORE
+@UI: {
+headerInfo: {
+    typeName: 'ZC_TB_XNDH',
+    typeNamePlural: 'ZC_TB_XNDHs'
+  }
+}
+annotate view ZR_TB_XNDH with
+{
+  @UI.facet: [
+        {
+
+                  label: 'Sale Order',
+                  id: 'SOInfo',
+                  type: #COLLECTION,
+                  position: 10
+         },
+         {
+                label: 'Item',
+                id: 'Item',
+                type: #LINEITEM_REFERENCE,
+                purpose: #STANDARD,
+                targetElement: '_Childrent',
+                position: 20
+           }
+
+  ]
+
+  @UI: {
+  selectionField: [{ position: 10 }],
+  lineItem: [ { position: 10 , importance: #MEDIUM } ]
+  }
+  @EndUserText.label: 'Đơn đặt hàng'
+  SalesOrder;
+  @UI: {
+   selectionField: [{ position: 20 }],
+  lineItem: [ { position: 20 , importance: #MEDIUM } ]
+  }
+  @EndUserText.label: 'Mã Sản Phẩm'
+  Product;
+  @UI: {
+  lineItem: [ { position: 30 , importance: #LOW } ]
+  }
+  @EndUserText.label: 'Tên sản phẩm'
+  SalesOrderItemText;
+  @UI: {
+  lineItem: [ { position: 40 , importance: #LOW } ]
+  }
+  @EndUserText.label: 'Số lượng'
+  OrderQuantity;
+  @UI: {
+  lineItem: [ { position: 50 , importance: #LOW } ]
+  }
+  @EndUserText.label: 'Đơn vị tính'
+  OrderQuantityUnit;
+  @UI: {
+   selectionField: [{ position: 30 }],
+  lineItem: [ { position: 60 , importance: #LOW } ]
+  }
+  @EndUserText.label: 'Ngày lên đơn'
+  CreationDate;
+  @UI: {
+   selectionField: [{ position: 40 }],
+  lineItem: [ { position: 70 , importance: #LOW } ]
+  }
+  @EndUserText.label: 'Ngày giao hàng'
+  RequestedDeliveryDate;
+  @UI.hidden: true
+  _Childrent;
+}
