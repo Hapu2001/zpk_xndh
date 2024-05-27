@@ -2,27 +2,39 @@
 annotate view ZR_TB_XNDH_HIS with
 {
   @UI: {  lineItem:       [{ position: 10 }]}
+  @EndUserText.label: 'Đơn đặt hàng'
   SalesOrder;
   @UI: {  lineItem:       [{ position: 20 }]}
-  SoLanChinhSua;
+  @EndUserText.label: 'Lần chỉnh sửa'
+  LanChinhSua;
   @UI: {  lineItem:       [{ position: 30 }]}
+  @EndUserText.label: 'Mã Sản Phẩm'
   Product;
   @UI: {  lineItem:       [{ position: 40 }]}
+  @EndUserText.label: 'Tên sản phẩm'
   SalesOrderItemText;
   @UI: {  lineItem:       [{ position: 50 }]}
+  @EndUserText.label: 'Số lượng'
   OrderQuantity;
   @UI: {  lineItem:       [{ position: 60 }]}
+  @EndUserText.label: 'Đơn vị tính'
   OrderQuantityUnit;
   @UI: {  lineItem:       [{ position: 70 }]}
+  @EndUserText.label: 'Ngày lên đơn'
   CreationDate;
   @UI: {  lineItem:       [{ position: 80 }]}
+  @EndUserText.label: 'Ngày giao hàng'
   RequestedDeliveryDate;
   @UI: {  lineItem:       [{ position: 90 }]}
+  @EndUserText.label: 'Ngày bắt đầu sản xuất'
   StartDate;
   @UI: {  lineItem:       [{ position: 100 }]}
+  @EndUserText.label: 'Ngày Hoàn thành'
   ConfirmDate;
   @UI: {  lineItem:       [{ position: 110 }]}
+  @EndUserText.label: 'Người chỉnh sửa'
   CreatedBy;
-  @UI: {  lineItem:       [{ position: 120 }]}
-  CreatedAt;
+   @UI.hidden: true
+  _Header;
+
 }

@@ -1,4 +1,5 @@
 @EndUserText.label: 'ZUI_R_XNDH'
 define service ZUI_R_XNDH {
-  expose ZR_TB_XNDH as ZR_TB_XNDH;
+  expose ZR_TB_XNDH     as ZR_TB_XNDH;
+  expose ZR_TB_XNDH_HIS;
 }

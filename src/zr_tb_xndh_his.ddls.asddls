@@ -9,13 +9,13 @@
 }
 @Metadata.allowExtensions: true
 define view entity ZR_TB_XNDH_HIS
-  as select from ztb_pp_xndh
+  as select from ztb_pp_xndh_his
   association [1..1] to I_SalesOrderItem  as _Item       on $projection.SalesOrder = _Item.SalesOrder
   association [1..1] to I_SalesOrder      as _SalesOrder on $projection.SalesOrder = _SalesOrder.SalesOrder
   association        to parent ZR_TB_XNDH as _Header     on $projection.SalesOrder = _Header.SalesOrder
 {
   key vbeln                             as SalesOrder,
-  key zlcs                              as SoLanChinhSua,
+  key zlcs                              as LanChinhSua,
       _Item.Product                     as Product,
       _Item.SalesOrderItemText          as SalesOrderItemText,
       @Semantics.quantity.unitOfMeasure: 'OrderQuantityUnit'

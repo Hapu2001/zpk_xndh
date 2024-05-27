@@ -3,14 +3,10 @@
 {
 "FROM":
 [
-"I_SALESORDER",
-"I_SALESORDERITEM",
-"ZTB_PP_XNDH"
+"I_SALESORDER"
 ],
 "ASSOCIATED":
-[
-"ZR_TB_XNDH_HIS"
-],
+[],
 "BASE":
 [],
 "ANNO_REF":

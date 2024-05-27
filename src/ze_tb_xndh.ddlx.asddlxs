@@ -2,40 +2,49 @@
 @UI: {
 headerInfo: {
     typeName: 'ZC_TB_XNDH',
-    typeNamePlural: 'ZC_TB_XNDHs'
+    typeNamePlural: 'App Xác nhận đơn hàng'
   }
 }
 annotate view ZR_TB_XNDH with
 {
   @UI.facet: [
         {
+            id: 'SOHeader',
+            purpose: #HEADER,
+            type:#DATAPOINT_REFERENCE,
+            position: 10,
+            targetQualifier: 'SOHeader'
+        },
 
-                  label: 'Sale Order',
-                  id: 'SOInfo',
-                  type: #COLLECTION,
-                  position: 10
-         },
          {
-                label: 'Item',
+                label: 'Số lần chỉnh sửa',
                 id: 'Item',
                 type: #LINEITEM_REFERENCE,
                 purpose: #STANDARD,
                 targetElement: '_Childrent',
-                position: 20
+                position: 10
            }
 
   ]
 
   @UI: {
-  selectionField: [{ position: 10 }],
-  lineItem: [ { position: 10 , importance: #MEDIUM } ]
-  }
+      selectionField: [{ position: 10 }],
+      lineItem: [ { position: 10 , importance: #MEDIUM } ]
+       }
+       @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_SalesOrderVH', element :'SalesOrder' } }]
+  @UI.dataPoint: { qualifier: 'SOHeader', title: 'Đơn đặt hàng'  }
+  @Search.defaultSearchElement: true
   @EndUserText.label: 'Đơn đặt hàng'
   SalesOrder;
   @UI: {
    selectionField: [{ position: 20 }],
   lineItem: [ { position: 20 , importance: #MEDIUM } ]
   }
+   @Consumption.valueHelpDefinition: [
+        { entity:  { name:    'I_ProductStdVH',
+                     element: 'Product' }
+        }]
+  @Search.defaultSearchElement: true
   @EndUserText.label: 'Mã Sản Phẩm'
   Product;
   @UI: {
@@ -54,17 +63,41 @@ annotate view ZR_TB_XNDH with
   @EndUserText.label: 'Đơn vị tính'
   OrderQuantityUnit;
   @UI: {
-   selectionField: [{ position: 30 }],
+  selectionField: [{ position: 30 }],
   lineItem: [ { position: 60 , importance: #LOW } ]
   }
+  @Consumption.filter : { mandatory: true}
+  @Search.defaultSearchElement: true
   @EndUserText.label: 'Ngày lên đơn'
   CreationDate;
   @UI: {
-   selectionField: [{ position: 40 }],
+  selectionField: [{ position: 40 }],
   lineItem: [ { position: 70 , importance: #LOW } ]
   }
+  @Search.defaultSearchElement: true
   @EndUserText.label: 'Ngày giao hàng'
   RequestedDeliveryDate;
+  @UI: {
+  lineItem: [ { position: 80 , importance: #LOW } ]
+  }
+  @EndUserText.label: 'Ngày bắt đầu sản xuất'
+  StartDate;
+  @UI: {
+  lineItem: [ { position: 90 , importance: #LOW } ]
+  }
+  @EndUserText.label: 'Ngày Hoàn thành'
+  ConfirmDate;
+  @UI: {
+  lineItem: [ { position: 100 , importance: #LOW } ]
+  }
+  @EndUserText.label: 'Lần chỉnh sửa'
+  SlEdit;
+  @UI: {
+  lineItem: [ { position: 110 , importance: #LOW } ]
+  }
+  @EndUserText.label: 'Người chỉnh sửa'
+  LastChangedBy;
+
   @UI.hidden: true
   _Childrent;
 }

@@ -11,7 +11,7 @@
 define root view entity ZR_TB_XNDH
   as select from I_SalesOrder
   association [1..1] to I_SalesOrderItem as _Item on $projection.SalesOrder = _Item.SalesOrder
-  association [1..1] to ztb_pp_xndh_his  as _ztb  on $projection.SalesOrder = _ztb.vbeln
+  association [1..1] to ztb_pp_xndh      as _ztb  on $projection.SalesOrder = _ztb.vbeln
   composition [0..*] of ZR_TB_XNDH_HIS   as _Childrent
 {
   key SalesOrder                 as SalesOrder,
